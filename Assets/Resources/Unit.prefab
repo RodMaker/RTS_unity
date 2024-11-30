@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetToAttack: {fileID: 0}
+  idleStateMaterial: {fileID: 2100000, guid: 38deb6e3b429cf941be5183814e7f6a6, type: 2}
+  followStateMaterial: {fileID: 2100000, guid: 30c7be7bd94387643afe55a977642cef, type: 2}
+  attackStateMaterial: {fileID: 2100000, guid: b942f437e93d771468312dcb347b8d31, type: 2}
 --- !u!95 &6598084462904578683
 Animator:
   serializedVersion: 5
