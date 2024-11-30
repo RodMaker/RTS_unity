@@ -20,6 +20,7 @@ public class UnitAttackState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         attackController = animator.GetComponent<AttackController>();
         attackController.SetAttackMaterial();
+        attackController.muzzleEffect.gameObject.SetActive(true);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,7 +30,7 @@ public class UnitAttackState : StateMachineBehaviour
             LookAtTarget();
 
             // Keep moving towards enemy
-            agent.SetDestination(attackController.targetToAttack.position);
+            //agent.SetDestination(attackController.targetToAttack.position);
 
             if (attackTimer <= 0)
             {
@@ -47,6 +48,10 @@ public class UnitAttackState : StateMachineBehaviour
             {
                 animator.SetBool("isAttacking", false); // Move to follow state
             }
+        }
+        else
+        {
+            animator.SetBool("isAttacking", false); // Move to follow state
         }
     }
 
@@ -69,6 +74,6 @@ public class UnitAttackState : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        attackController.muzzleEffect.gameObject.SetActive(false);
     }
 }
