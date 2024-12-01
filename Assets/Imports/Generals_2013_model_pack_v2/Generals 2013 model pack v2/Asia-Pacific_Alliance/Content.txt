@@ -1,0 +1,55 @@
+Structures APA:
+------------------------------------------------------
+as_airfield: Mesh ✓ / Texture ✓
+as_barracks: Mesh ✓ / Texture ✓
+as_basedefenseflame: Mesh ✓ / Texture ✓
+as_basedefensegun: Mesh ✓ / Texture ✓
+as_basedefenserocket: Mesh ✓ / Texture ✓
+as_bunker: Mesh ✓ / Texture ✓
+as_cameraturret: Mesh ❌ / Texture ✓
+as_commandcenter: Mesh ✓ / Texture ✓
+as_guardtower: Mesh ✓ / Texture ✓
+as_nuclearsilo: Mesh ✓ / Texture ✓
+as_oilderrick: Mesh ✓ / Texture ✓
+as_powerplant: Mesh ✓ / Texture ✓
+as_propagandatower: Mesh ✓ / Texture ✓
+as_supplycenter: Mesh ✓ / Texture ✓
+as_techstructurea: Mesh ✓ / Texture ✓
+as_warfactory: Mesh ✓ / Texture ✓
+as_warfactoryadvanced: Mesh ✓ / Texture ✓
+____________________________________________________
+
+Air Units:
+------------------------------------------------------
+au_airbomber: Mesh ✓ / Texture ✓
+au_airfighter: Mesh ✓ / Texture ✓
+au_airtransport: Mesh ✓ / Texture ✓
+au_lightcasteraircraft: Mesh ✓ / Texture ✓
+____________________________________________________
+
+
+Infantry:
+------------------------------------------------------
+au_elitenapalmsoldier: Mesh ✓ / Texture ✓
+au_rocketsoldier: Mesh  ✓ / Texture ✓
+au_saboteur: Mesh ✓ / Texture ✓
+au_urbanassaulttrooper: Mesh ✓ / Texture ✓
+au_riflesoldier: Mesh ✓ / Texture ✓
+au_eliteflamesoldier: Mesh ✓ / Texture ✓
+au_commando: Mesh ✓ / Texture ✓
+____________________________________________________
+
+Vehicles:
+------------------------------------------------------
+au_mediumcannontank: Mesh ✓ / Texture ✓
+au_mediumflametank: Mesh ✓ / Texture ✓
+au_mediumrockettank: Mesh ✓ / Texture ✓
+au_mediumstealthtank: Mesh ✓ / Texture ✓
+au_heavycannonartillery: Mesh ✓ / Texture ✓
+au_heavynukeartillery: Mesh ✓ / Texture ✓
+au_heavycannontank: Mesh ✓ / Texture ✓
+au_constructionunit: Mesh ✓ / Texture ✓
+au_mediumguntank: Mesh ✓ / Texture ✓
+au_lightreconvehicle: Mesh ✓ / Texture ✓
+au_harvester: Mesh ✓ / Texture ✓
+____________________________________________________

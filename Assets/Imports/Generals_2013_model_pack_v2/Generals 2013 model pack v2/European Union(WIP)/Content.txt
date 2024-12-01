@@ -1,0 +1,56 @@
+Structures EU:
+------------------------------------------------------
+es_airfield: Mesh ✓ / Texture ✓
+es_barracks: Mesh ✓ / Texture ✓ 
+es_barracksadvanced: Mesh ✓ / Texture ✓ / 
+es_basedefensecannon: Mesh ✓ / Texture ✓
+es_basedefensegun: Mesh ✓ / Texture ✓
+es_basedefenserailgun: Mesh ✓ / Texture ✓
+es_basedefenserocket: Mesh ✓ / Texture ✓
+es_bunker: Mesh ✓ / Texture ✓
+es_commandcenter: Mesh ✓ / Texture ✓
+es_guardtower: Mesh ✓ / Texture ❌ (Probably uses texture from another model)
+es_healinfantryturret: Mesh ✓ / Texture ✓
+es_oilderrick: Mesh ✓ / Texture ✓
+es_orbitalcannon: Mesh ✓ / Texture ✓
+es_powerplant: Mesh ✓ / Texture ✓
+es_supplycenter: Mesh ✓ / Texture ✓
+es_techstructure_a: Mesh ✓ / Texture ✓
+es_techstructure_b: Mesh ✓ / Texture ✓ (Needs cleaning)
+es_warfactory: Mesh ✓ / Texture ✓ (Needs a fixup)
+es_repairvehicleturret: Mesh ✓ / Texture ✓
+____________________________________________________
+
+Air Units:
+------------------------------------------------------
+eu_airbomber: Mesh ✓ / Texture ✓
+eu_airtransport: Mesh ✓ / Texture ✓
+eu_spydrone: Mesh ✓ / Texture ✓
+eu_heavyrockethelo: Mesh ✓ / Texture ✓
+eu_lightrockethelo: Mesh ✓ / Texture ✓
+eu_lightstealthhelo: Mesh ✓ / Texture ✓
+____________________________________________________
+Infantry:
+------------------------------------------------------
+eu_commando: Mesh ✓ / Texture ✓
+eu_eliterailgunsoldier: Mesh ✓ / Texture ✓
+eu_elitesnipersoldier: Mesh ✓ / Texture ✓
+eu_riflesoldier: Mesh ✓ / Texture ✓
+eu_rocketsoldier: Mesh ✓ / Texture ✓
+eu_shocktrooper: Mesh ✓ / Texture ✓
+eu_lightcastersoldier: Mesh ✓ / Texture ✓
+____________________________________________________
+
+Vehciles:
+------------------------------------------------------
+eu_apc: Mesh ✓ / Texture ✓
+eu_apcassault: Mesh ✓ / Texture ✓
+eu_constructionunit: Mesh ✓ / Texture ✓
+eu_harvester: Mesh ✓ / Texture ✓
+eu_heavylasertank: Mesh ✓ / Texture ✓
+eu_heavyrailguntank: Mesh ✓ / Texture ✓
+eu_heavyrailguntankexp: Mesh ✓ / Texture ✓
+eu_lightreconvehicle: Mesh ✓ / Texture ✓
+eu_mediumcannontank: Mesh ✓ / Texture ✓
+eu_mediumrocketvehicle: Mesh ✓ / Texture ✓
+____________________________________________________
