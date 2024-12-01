@@ -15,20 +15,25 @@ MonoBehaviour:
   objectsData:
   - <Name>k__BackingField: Command Center
     <ID>k__BackingField: 0
+    <thisBuildingType>k__BackingField: 1
     description: 
     <Size>k__BackingField: {x: 3, y: 3}
     <Prefab>k__BackingField: {fileID: 1986312044789550465, guid: 3639450100901a3468eefbea3e25c01e,
       type: 3}
-    <requirements>k__BackingField:
+    <resourceRequirements>k__BackingField:
     - resource: 0
       amount: 150
+    <buildDependency>k__BackingField: 00000000
     <benefits>k__BackingField: []
   - <Name>k__BackingField: Power Plant
     <ID>k__BackingField: 1
+    <thisBuildingType>k__BackingField: 2
     description: 
     <Size>k__BackingField: {x: 3, y: 3}
-    <Prefab>k__BackingField: {fileID: 0}
-    <requirements>k__BackingField:
+    <Prefab>k__BackingField: {fileID: 8850964909181546825, guid: 94fe805e12be13c48afb48e22e1bf05d,
+      type: 3}
+    <resourceRequirements>k__BackingField:
     - resource: 0
-      amount: 500
+      amount: 100
+    <buildDependency>k__BackingField: 01000000
     <benefits>k__BackingField: []

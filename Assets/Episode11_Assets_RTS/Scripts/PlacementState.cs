@@ -59,6 +59,10 @@ public class PlacementState : IBuildingState
 
         ResourceManager.Instance.DecreaseResourcesBasedOnRequirement(database.objectsData[selectedObjectIndex]);
 
+        // Get building type of the building that we just built
+        BuildingType buildingType = database.objectsData[selectedObjectIndex].thisBuildingType;
+        ResourceManager.Instance.UpdateBuildingChanged(buildingType, true);
+
         // If this id is a floor id, then its a floor data, else its a furniture data
         GridData selectedData = GetAllFloorIDs().Contains(database.objectsData[selectedObjectIndex].ID) ? floorData : furnitureData;
        
