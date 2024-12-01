@@ -10,10 +10,14 @@ public class UnitMovement : MonoBehaviour
     public LayerMask ground;
     public bool isCommandedToMove;
 
+    DirectionIndicator directionIndicator;
+
     private void Start()
     {
         cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
+
+        directionIndicator = GetComponent<DirectionIndicator>();
     }
 
     private void Update()
@@ -27,6 +31,8 @@ public class UnitMovement : MonoBehaviour
             {
                 isCommandedToMove = true;
                 agent.SetDestination(hit.point);
+
+                directionIndicator.DrawLine(hit);
             }
         }
 
