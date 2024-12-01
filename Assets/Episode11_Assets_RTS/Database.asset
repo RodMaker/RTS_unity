@@ -19,5 +19,16 @@ MonoBehaviour:
     <Size>k__BackingField: {x: 3, y: 3}
     <Prefab>k__BackingField: {fileID: 1986312044789550465, guid: 3639450100901a3468eefbea3e25c01e,
       type: 3}
-    <requirements>k__BackingField: []
+    <requirements>k__BackingField:
+    - resource: 0
+      amount: 150
+    <benefits>k__BackingField: []
+  - <Name>k__BackingField: Power Plant
+    <ID>k__BackingField: 1
+    description: 
+    <Size>k__BackingField: {x: 3, y: 3}
+    <Prefab>k__BackingField: {fileID: 0}
+    <requirements>k__BackingField:
+    - resource: 0
+      amount: 500
     <benefits>k__BackingField: []

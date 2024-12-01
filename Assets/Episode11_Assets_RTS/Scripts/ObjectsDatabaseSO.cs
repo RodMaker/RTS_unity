@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class ObjectsDatabseSO : ScriptableObject
+public class ObjectsDatabaseSO : ScriptableObject
 {
     public List<ObjectData> objectsData;
 
@@ -54,7 +54,7 @@ public class ObjectData
 [System.Serializable]
 public class BuildRequirement
 {
-    public string resource;
+    public ResourceManager.ResourcesType resource;
     public int amount;
 }
 

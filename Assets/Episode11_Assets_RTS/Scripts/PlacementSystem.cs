@@ -9,7 +9,7 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private Grid grid;
 
-    [SerializeField] private ObjectsDatabseSO database;
+    [SerializeField] private ObjectsDatabaseSO database;
 
     [SerializeField] private GridData floorData, furnitureData; // floor things like roads, furniture change to "buildings"
 
