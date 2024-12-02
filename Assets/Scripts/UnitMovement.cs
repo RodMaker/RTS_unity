@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class UnitMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && IsMovingPossible())
         {
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -44,6 +45,11 @@ public class UnitMovement : MonoBehaviour
             isCommandedToMove = false;
         }
         */
+    }
+
+    private bool IsMovingPossible()
+    {
+        return CursorManager.Instance.currentCursor != CursorManager.CursorType.UnAvailable;
     }
 
     IEnumerator NoCommand()

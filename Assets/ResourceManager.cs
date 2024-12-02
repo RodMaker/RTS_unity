@@ -29,6 +29,8 @@ public class ResourceManager : MonoBehaviour
 
     public List<BuildingType> allExistingBuildings;
 
+    public PlacementSystem placementSystem; 
+
     public enum ResourcesType
     {
         Credits
@@ -39,7 +41,7 @@ public class ResourceManager : MonoBehaviour
         UpdateUI();
     }
 
-    public void UpdateBuildingChanged(BuildingType buildingType, bool isNew)
+    public void UpdateBuildingChanged(BuildingType buildingType, bool isNew, Vector3 position)
     {
         if (isNew)
         {
@@ -47,6 +49,7 @@ public class ResourceManager : MonoBehaviour
         }
         else
         {
+            placementSystem.RemovePlacementData(position);
             allExistingBuildings.Remove(buildingType);
         }
 
@@ -79,6 +82,29 @@ public class ResourceManager : MonoBehaviour
         }
 
         OnResourceChanged?.Invoke();
+    }
+
+    public void SellBuilding(BuildingType buildingType)
+    {
+        var sellingPrice = 0;
+        
+        foreach (ObjectData obj in DatabaseManager.Instance.databaseSO.objectsData)
+        {
+            if (obj.thisBuildingType == buildingType)
+            {
+                foreach (BuildRequirement req in obj.resourceRequirements)
+                {
+                    if (req.resource == ResourcesType.Credits)
+                    {
+                        sellingPrice = req.amount;
+                    }
+                }
+            }
+        }
+
+        int amountToReturn = (int)(sellingPrice * 0.5f); // 50% of the cost
+
+        IncreaseResource(ResourcesType.Credits, amountToReturn);
     }
 
     private void UpdateUI()

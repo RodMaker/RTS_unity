@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5347754034208058892}
   - component: {fileID: 9131197221128296461}
   - component: {fileID: 2443215121506894666}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: TeamName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1187702894519062115}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5185427594764103616}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 5686649931923216932}
   - component: {fileID: 4583988985258149808}
   - component: {fileID: 7399392789279408898}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 2620865214448329017}
   - component: {fileID: 908754940740600794}
   - component: {fileID: 1964593169348484716}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ RectTransform:
   m_Father: {fileID: 1187702894519062115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -4.894989, y: 0}
   m_SizeDelta: {x: 0.21, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 7328591627326748683}
   - component: {fileID: 2737121436874257660}
   - component: {fileID: 2420664086040198960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ConstructableUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5604436979992755484}
   - component: {fileID: 4069498465789541831}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 7461509031646238222}
   - component: {fileID: 3071648714866749663}
   - component: {fileID: 5067225304241036744}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Power Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,6 +615,7 @@ MonoBehaviour:
   healthTracker: {fileID: 5489993517701202045}
   isEnemy: 0
   buildingType: 2
+  buildPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &5067225304241036744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -649,13 +650,13 @@ GameObject:
   - component: {fileID: 4263168686219370566}
   - component: {fileID: 5489993517701202045}
   - component: {fileID: 1482201502170610221}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8992991979687225113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,7 +756,7 @@ GameObject:
   - component: {fileID: 1368878969021928347}
   - component: {fileID: 8529011446394341484}
   - component: {fileID: 2370629883458315805}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,8 +777,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5185427594764103616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -882,10 +883,30 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 67c5c4dfb0ac7f14aa189ac93b3a790f, type: 2}
+    - target: {fileID: -7408126992104044777, guid: e3793dd39aa4ee047853d7322167e21c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3793dd39aa4ee047853d7322167e21c,
         type: 3}
       propertyPath: m_Name
       value: es_powerplant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3793dd39aa4ee047853d7322167e21c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934925055436261859, guid: e3793dd39aa4ee047853d7322167e21c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431882820548210852, guid: e3793dd39aa4ee047853d7322167e21c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

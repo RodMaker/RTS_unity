@@ -17,6 +17,8 @@ public class UnitSelectionManager : MonoBehaviour
 
     public bool attackCursorVisible;
 
+    public LayerMask constructable;
+
     public GameObject groundMarker;
 
     private Camera cam;
@@ -125,10 +127,18 @@ public class UnitSelectionManager : MonoBehaviour
         {
             CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Selectable);
         }
+        else if (ResourceManager.Instance.placementSystem.inSellMode)
+        {
+            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.SellCursor);
+        }
         else if (Physics.Raycast(ray, out hit, Mathf.Infinity, attackable)
             && unitsSelected.Count > 0 && AtLeastOneOffensiveUnit(unitsSelected))
         {
             CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Attackable);
+        }
+        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, constructable) && unitsSelected.Count > 0)
+        {
+            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.UnAvailable);
         }
         else if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground) && unitsSelected.Count > 0)
         {
@@ -144,7 +154,7 @@ public class UnitSelectionManager : MonoBehaviour
     {
         foreach (GameObject unit in unitsSelected)
         {
-            if (unit.GetComponent<AttackController>())
+            if (unit != null && unit.GetComponent<AttackController>())
             {
                 return true;
             }

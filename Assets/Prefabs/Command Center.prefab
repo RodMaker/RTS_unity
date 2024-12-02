@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7665805863494654173}
   - component: {fileID: 3924153612705357349}
   - component: {fileID: 615758665794686594}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5575275144281719691}
   - component: {fileID: 1720607005207876858}
   - component: {fileID: 5208314955670094339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ConstructableUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 6237854656156229831}
   - component: {fileID: 97519957427883661}
   - component: {fileID: 8895820886709588369}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Command Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +228,7 @@ MonoBehaviour:
   healthTracker: {fileID: 2319130257346263394}
   isEnemy: 1
   buildingType: 1
+  buildPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &8895820886709588369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -260,7 +261,7 @@ GameObject:
   - component: {fileID: 7407514275627084848}
   - component: {fileID: 2401130547020916642}
   - component: {fileID: 4791445348143731963}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: TeamName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4667929228574018856}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +431,7 @@ GameObject:
   - component: {fileID: 132423972929524729}
   - component: {fileID: 6215138506803089662}
   - component: {fileID: 6740387420800549110}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1953643880242289302}
   - component: {fileID: 8148498628507898562}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +597,7 @@ GameObject:
   - component: {fileID: 1576427520886582555}
   - component: {fileID: 8467311021718654638}
   - component: {fileID: 2699946552798290516}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772373755995871846}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +725,7 @@ GameObject:
   - component: {fileID: 2483686927938554382}
   - component: {fileID: 2319130257346263394}
   - component: {fileID: 1454727980273503377}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: HealthTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,16 +878,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7940102891844346540, guid: c3db9a1141356474ea062aab5cfd3540,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -6673533322802565586, guid: c3db9a1141356474ea062aab5cfd3540,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c3db9a1141356474ea062aab5cfd3540,
         type: 3}
       propertyPath: m_Name
       value: es_commandcenter
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3db9a1141356474ea062aab5cfd3540,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6458875993135543632, guid: c3db9a1141356474ea062aab5cfd3540,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 20406c58417087444aaa92c67f8aba32, type: 2}
+    - target: {fileID: 7431882820548210852, guid: c3db9a1141356474ea062aab5cfd3540,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8755311049017149898, guid: c3db9a1141356474ea062aab5cfd3540,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
