@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Unit : MonoBehaviour
+public class Unit : MonoBehaviour, IDamageable
 {
     private float unitHealth;
     public float unitMaxHealth;
@@ -46,7 +46,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    internal void TakeDamage(int damageToInflict)
+    public void TakeDamage(int damageToInflict)
     {
         unitHealth -= damageToInflict;
         UpdateHealthUI();

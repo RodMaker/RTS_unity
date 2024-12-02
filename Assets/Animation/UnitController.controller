@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95505262b0c20c84ca279d6b0260ae9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopAttackingDistance: 1.2
+  stopAttackingDistance: 3.2
   attackRate: 2
 --- !u!1101 &1727472684184731438
 AnimatorStateTransition:
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aed46095f3d15a44a8199dce551f4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackingDistance: 1
+  attackingDistance: 3
 --- !u!1101 &6431571378183905270
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

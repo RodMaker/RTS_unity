@@ -6,10 +6,11 @@ public class FaceCamera : MonoBehaviour
 {
     private Transform localTrans;
 
-    public Camera facingCamera;
+    private Camera facingCamera;
 
     private void Start()
     {
+        facingCamera = Camera.main;
         localTrans = GetComponent<Transform>();
     }
 
