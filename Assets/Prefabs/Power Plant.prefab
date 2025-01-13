@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 7461509031646238222}
   - component: {fileID: 3071648714866749663}
   - component: {fileID: 5067225304241036744}
+  - component: {fileID: -3220658116577625682}
   m_Layer: 10
   m_Name: Power Plant
   m_TagString: Untagged
@@ -616,6 +617,7 @@ MonoBehaviour:
   isEnemy: 0
   buildingType: 2
   buildPosition: {x: 0, y: 0, z: 0}
+  inPreviewMode: 1
 --- !u!65 &5067225304241036744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -637,6 +639,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5059975, y: 1.0518972, z: 1.5016726}
   m_Center: {x: 0.50383514, y: 0.47572416, z: 0.497348}
+--- !u!114 &-3220658116577625682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8850964909181546825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b639da68f5747498373a98481581c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  producingPower: 200
+  consumingPower: 0
+  isProducer: 1
 --- !u!1 &9001379416796680534
 GameObject:
   m_ObjectHideFlags: 0

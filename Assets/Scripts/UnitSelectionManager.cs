@@ -23,6 +23,8 @@ public class UnitSelectionManager : MonoBehaviour
 
     private Camera cam;
 
+    public bool playedDuringThisDrag = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -208,8 +210,6 @@ public class UnitSelectionManager : MonoBehaviour
 
     private void SelectUnit(GameObject unit, bool isSelected)
     {
-        SoundManager.Instance.PlayUnitSelectionSound();
-
         TriggerSelectionIndicator(unit, isSelected);
         EnableUnitMovement(unit, isSelected);
     }
@@ -221,6 +221,14 @@ public class UnitSelectionManager : MonoBehaviour
 
     private void TriggerSelectionIndicator(GameObject unit, bool isVisible)
     {
-        unit.transform.Find("Indicator").gameObject.SetActive(isVisible);
+        GameObject indicator = unit.transform.Find("Indicator").gameObject;
+
+        if (!indicator.activeInHierarchy && !playedDuringThisDrag)
+        {
+            SoundManager.Instance.PlayUnitSelectionSound();
+            playedDuringThisDrag = true;
+        }
+
+        indicator.SetActive(isVisible);
     }
 }

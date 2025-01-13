@@ -11,10 +11,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip infantryAttackClip;
 
     [Header("Unit")]
-    private AudioSource unitSelectionChannel;
-    private AudioSource unitCommandChannel;
-    public AudioClip unitSelectionSound;
-    public AudioClip unitCommandSound;
+    private AudioSource unitVoiceChannel;
+    public AudioClip[] unitSelectionSounds;
+    public AudioClip[] unitCommandSounds;
 
     [Header("Buildings")]
     private AudioSource constructionBuildingChannel;
@@ -36,28 +35,24 @@ public class SoundManager : MonoBehaviour
         }
 
         infantryAttackChannel = gameObject.AddComponent<AudioSource>();
-        infantryAttackChannel.volume = 0.1f;
-        infantryAttackChannel.playOnAwake = false;
+        //infantryAttackChannel.volume = 0.1f;
+        //infantryAttackChannel.playOnAwake = false;
 
-        unitSelectionChannel = gameObject.AddComponent<AudioSource>();
-        unitSelectionChannel.volume = 0.1f;
-        unitSelectionChannel.playOnAwake = false;
-
-        unitCommandChannel = gameObject.AddComponent<AudioSource>();
-        unitCommandChannel.volume = 0.1f;
-        unitCommandChannel.playOnAwake = false;
+        unitVoiceChannel = gameObject.AddComponent<AudioSource>();
+        //unitVoiceChannel.volume = 1f;
+        //unitVoiceChannel.playOnAwake = false;
 
         constructionBuildingChannel = gameObject.AddComponent<AudioSource>();
-        constructionBuildingChannel.volume = 0.1f;
-        constructionBuildingChannel.playOnAwake = false;
+        //constructionBuildingChannel.volume = 1f;
+        //constructionBuildingChannel.playOnAwake = false;
 
         destructionBuildingChannel = gameObject.AddComponent<AudioSource>();
-        destructionBuildingChannel.volume = 0.1f;
-        destructionBuildingChannel.playOnAwake = false;
+        //destructionBuildingChannel.volume = 1f;
+        //destructionBuildingChannel.playOnAwake = false;
 
         extraBuildingChannel = gameObject.AddComponent<AudioSource>();
-        extraBuildingChannel.volume = 0.1f;
-        extraBuildingChannel.playOnAwake = false;
+        //extraBuildingChannel.volume = 1f;
+        //extraBuildingChannel.playOnAwake = false;
     }
 
     public void PlayInfantryAttackSound()
@@ -94,17 +89,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlayUnitSelectionSound()
     {
-        if (unitSelectionChannel.isPlaying == false)
+        if (unitVoiceChannel.isPlaying == false)
         {
-            unitSelectionChannel.PlayOneShot(unitSelectionSound);
+            AudioClip randomClip = unitSelectionSounds[Random.Range(0, unitSelectionSounds.Length)];
+            unitVoiceChannel.PlayOneShot(randomClip);
         }
     }
 
     public void PlayUnitCommandSound()
     {
-        if (unitCommandChannel.isPlaying == false)
+        if (unitVoiceChannel.isPlaying == false)
         {
-            unitCommandChannel.PlayOneShot(unitCommandSound);
+            AudioClip randomClip = unitCommandSounds[Random.Range(0, unitCommandSounds.Length)];
+            unitVoiceChannel.PlayOneShot(randomClip);
         }
     }
 }

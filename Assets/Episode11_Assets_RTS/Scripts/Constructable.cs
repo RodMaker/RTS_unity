@@ -13,11 +13,13 @@ public class Constructable : MonoBehaviour, IDamageable
 
     public bool isEnemy = false;
 
-    NavMeshObstacle obstacle;
+    private NavMeshObstacle obstacle;
 
     public BuildingType buildingType;
 
     public Vector3 buildPosition;
+
+    public bool inPreviewMode;
 
     private void Start()
     {
@@ -42,9 +44,12 @@ public class Constructable : MonoBehaviour, IDamageable
 
     private void OnDestroy()
     {
-        if (constHealth > 0 && buildPosition != Vector3.zero)
+        if (inPreviewMode == false)
         {
-            ResourceManager.Instance.SellBuilding(buildingType);
+            if (constHealth > 0 && buildPosition != Vector3.zero)
+            {
+                ResourceManager.Instance.SellBuilding(buildingType);
+            }
         }
     }
 
@@ -64,6 +69,11 @@ public class Constructable : MonoBehaviour, IDamageable
         if (isEnemy)
         {
             gameObject.tag = "Enemy";
+        }
+
+        if (GetComponent<PowerUser>() != null)
+        {
+            GetComponent<PowerUser>().PowerOn();
         }
     }
 

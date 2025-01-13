@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 6237854656156229831}
   - component: {fileID: 97519957427883661}
   - component: {fileID: 8895820886709588369}
+  - component: {fileID: -8007173866818848608}
   m_Layer: 10
   m_Name: Command Center
   m_TagString: Untagged
@@ -226,9 +227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constMaxHealth: 100
   healthTracker: {fileID: 2319130257346263394}
-  isEnemy: 1
+  isEnemy: 0
   buildingType: 1
   buildPosition: {x: 0, y: 0, z: 0}
+  inPreviewMode: 1
 --- !u!65 &8895820886709588369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -250,6 +252,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9933815, y: 2.2211573, z: 2.4856567}
   m_Center: {x: 0.49669075, y: 1.0594407, z: 0.4910221}
+--- !u!114 &-8007173866818848608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986312044789550465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b639da68f5747498373a98481581c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  producingPower: 0
+  consumingPower: 50
+  isProducer: 0
 --- !u!1 &2618242692986044634
 GameObject:
   m_ObjectHideFlags: 0

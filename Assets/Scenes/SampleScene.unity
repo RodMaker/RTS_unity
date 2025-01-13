@@ -531,8 +531,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infantryAttackClip: {fileID: 8300000, guid: 305574add287e47499bfb3a1d606d9f6, type: 3}
-  unitSelectionSound: {fileID: 8300000, guid: 09cc773b11863e141852554ad77d0ede, type: 3}
-  unitCommandSound: {fileID: 8300000, guid: 56d31805a5b466849b0a81842202e45c, type: 3}
+  unitSelectionSounds:
+  - {fileID: 8300000, guid: 09cc773b11863e141852554ad77d0ede, type: 3}
+  - {fileID: 8300000, guid: 954c98621d1dac041935722d9a0bae7a, type: 3}
+  - {fileID: 8300000, guid: 9a12e214d43ac6a4bb3d42d4943824ff, type: 3}
+  unitCommandSounds:
+  - {fileID: 8300000, guid: 56d31805a5b466849b0a81842202e45c, type: 3}
+  - {fileID: 8300000, guid: d13299823eb9d2e48b87ea5f56b1f03f, type: 3}
+  - {fileID: 8300000, guid: 780bf62449f605640b8d486ecd490b3e, type: 3}
   buildingConstructionSound: {fileID: 8300000, guid: cf612f30260db9446a574cc0f41192d5,
     type: 3}
   buildingDestructionSound: {fileID: 8300000, guid: bbec58556a7ffa347ab23688af051bd8,
@@ -1476,6 +1482,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630930125}
   m_CullTransparentMesh: 1
+--- !u!1 &652781267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652781269}
+  - component: {fileID: 652781268}
+  m_Layer: 0
+  m_Name: PowerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &652781268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652781267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f7a81636d82794ab5797f9b8c4e643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalPower: 0
+  powerUsage: 0
+  sliderFill: {fileID: 0}
+  powerSlider: {fileID: 0}
+  powerText: {fileID: 0}
+--- !u!4 &652781269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652781267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.609936, y: -0.14198035, z: 15.423867}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2467,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   groundMarker: {fileID: 328139796}
+  playedDuringThisDrag: 0
 --- !u!4 &1351077966
 Transform:
   m_ObjectHideFlags: 0
@@ -5716,3 +5772,4 @@ SceneRoots:
   - {fileID: 1898290782}
   - {fileID: 1184097410}
   - {fileID: 1751431756}
+  - {fileID: 652781269}

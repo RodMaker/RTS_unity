@@ -52,6 +52,8 @@ public class UnitSelectionBox : MonoBehaviour
         // When Releasing
         if (Input.GetMouseButtonUp(0))
         {
+            UnitSelectionManager.Instance.playedDuringThisDrag = false;
+
             SelectUnits();
 
             startPosition = Vector2.zero;
