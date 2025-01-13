@@ -34,6 +34,8 @@ public class UnitMovement : MonoBehaviour
                 StartCoroutine(NoCommand());
                 agent.SetDestination(hit.point);
 
+                SoundManager.Instance.PlayUnitCommandSound();
+
                 directionIndicator.DrawLine(hit);
             }
         }

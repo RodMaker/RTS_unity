@@ -531,6 +531,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infantryAttackClip: {fileID: 8300000, guid: 305574add287e47499bfb3a1d606d9f6, type: 3}
+  unitSelectionSound: {fileID: 8300000, guid: 09cc773b11863e141852554ad77d0ede, type: 3}
+  unitCommandSound: {fileID: 8300000, guid: 56d31805a5b466849b0a81842202e45c, type: 3}
+  buildingConstructionSound: {fileID: 8300000, guid: cf612f30260db9446a574cc0f41192d5,
+    type: 3}
+  buildingDestructionSound: {fileID: 8300000, guid: bbec58556a7ffa347ab23688af051bd8,
+    type: 3}
+  sellingSound: {fileID: 8300000, guid: 82b0bfcf0a3778d4685f54e39974f2b7, type: 3}
 --- !u!4 &308298624
 Transform:
   m_ObjectHideFlags: 0
@@ -1334,7 +1341,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2b0c1447ec04c4e4288ef91934ef1571, type: 2}
-  m_BuildHeightMesh: 0
+  m_BuildHeightMesh: 1
 --- !u!1 &630930125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824260668
 RectTransform:
   m_ObjectHideFlags: 0

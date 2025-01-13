@@ -208,6 +208,8 @@ public class UnitSelectionManager : MonoBehaviour
 
     private void SelectUnit(GameObject unit, bool isSelected)
     {
+        SoundManager.Instance.PlayUnitSelectionSound();
+
         TriggerSelectionIndicator(unit, isSelected);
         EnableUnitMovement(unit, isSelected);
     }

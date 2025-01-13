@@ -16,6 +16,8 @@ public class UnitSelectionBox : MonoBehaviour
 
     private void Start()
     {
+        boxVisual.gameObject.SetActive(true);
+
         myCam = Camera.main;
         startPosition = Vector2.zero;
         endPosition = Vector2.zero;

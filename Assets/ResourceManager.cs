@@ -45,10 +45,14 @@ public class ResourceManager : MonoBehaviour
     {
         if (isNew)
         {
+            // Building
             allExistingBuildings.Add(buildingType);
+
+            SoundManager.Instance.PlayBuildingConstructionSound();
         }
         else
         {
+            // Can be both destruction and selling
             placementSystem.RemovePlacementData(position);
             allExistingBuildings.Remove(buildingType);
         }
@@ -86,6 +90,10 @@ public class ResourceManager : MonoBehaviour
 
     public void SellBuilding(BuildingType buildingType)
     {
+        Debug.Log("Selling building");
+
+        SoundManager.Instance.PlayBuildingSellingSound();
+
         var sellingPrice = 0;
         
         foreach (ObjectData obj in DatabaseManager.Instance.databaseSO.objectsData)

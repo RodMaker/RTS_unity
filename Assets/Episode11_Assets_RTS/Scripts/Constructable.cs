@@ -34,6 +34,8 @@ public class Constructable : MonoBehaviour, IDamageable
             // Other destruction logic
             ResourceManager.Instance.UpdateBuildingChanged(buildingType, false, buildPosition);
 
+            SoundManager.Instance.PlayBuildingDestructionSound();
+
             Destroy(gameObject);
         }
     }
