@@ -11,12 +11,16 @@ public class SoundManager : MonoBehaviour
     public AudioClip infantryAttackClip;
 
     [Header("Unit")]
-    private AudioSource unitVoiceChannel;
+    public int poolSize = 2;
+    private int unitCurrentPoolIndex = 0;
+    private int constructionCurrentPoolIndex = 0;
+
+    private AudioSource[] unitVoiceChannelPool;
     public AudioClip[] unitSelectionSounds;
     public AudioClip[] unitCommandSounds;
 
     [Header("Buildings")]
-    private AudioSource constructionBuildingChannel;
+    private AudioSource[] constructionBuildingChannelPool;
     private AudioSource destructionBuildingChannel;
     private AudioSource extraBuildingChannel;
     public AudioClip buildingConstructionSound;
@@ -38,11 +42,24 @@ public class SoundManager : MonoBehaviour
         //infantryAttackChannel.volume = 0.1f;
         //infantryAttackChannel.playOnAwake = false;
 
-        unitVoiceChannel = gameObject.AddComponent<AudioSource>();
+        // Create array of audiosources with a "poolSize"
+        unitVoiceChannelPool = new AudioSource[poolSize];
+
+        for (int i = 0; i < poolSize; i++)
+        {
+            unitVoiceChannelPool[i] = gameObject.AddComponent<AudioSource>();
+        }
+
         //unitVoiceChannel.volume = 1f;
         //unitVoiceChannel.playOnAwake = false;
 
-        constructionBuildingChannel = gameObject.AddComponent<AudioSource>();
+        constructionBuildingChannelPool = new AudioSource[3];
+
+        for (int i = 0; i < poolSize; i++)
+        {
+            constructionBuildingChannelPool[i] = gameObject.AddComponent<AudioSource>();
+        }
+
         //constructionBuildingChannel.volume = 1f;
         //constructionBuildingChannel.playOnAwake = false;
 
@@ -65,10 +82,9 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBuildingConstructionSound()
     {
-        if (constructionBuildingChannel.isPlaying == false)
-        {
-            constructionBuildingChannel.PlayOneShot(buildingConstructionSound);
-        }
+        constructionBuildingChannelPool[constructionCurrentPoolIndex].PlayOneShot(buildingConstructionSound);
+
+        constructionCurrentPoolIndex = (constructionCurrentPoolIndex + 1) % poolSize;
     }
 
     public void PlayBuildingDestructionSound()
@@ -89,19 +105,19 @@ public class SoundManager : MonoBehaviour
 
     public void PlayUnitSelectionSound()
     {
-        if (unitVoiceChannel.isPlaying == false)
-        {
-            AudioClip randomClip = unitSelectionSounds[Random.Range(0, unitSelectionSounds.Length)];
-            unitVoiceChannel.PlayOneShot(randomClip);
-        }
+        AudioClip randomClip = unitSelectionSounds[Random.Range(0, unitSelectionSounds.Length)];
+        
+        unitVoiceChannelPool[unitCurrentPoolIndex].PlayOneShot(randomClip);
+
+        unitCurrentPoolIndex = (unitCurrentPoolIndex + 1) % poolSize;
     }
 
     public void PlayUnitCommandSound()
     {
-        if (unitVoiceChannel.isPlaying == false)
-        {
-            AudioClip randomClip = unitCommandSounds[Random.Range(0, unitCommandSounds.Length)];
-            unitVoiceChannel.PlayOneShot(randomClip);
-        }
+        AudioClip randomClip = unitCommandSounds[Random.Range(0, unitCommandSounds.Length)];
+
+        unitVoiceChannelPool[unitCurrentPoolIndex].PlayOneShot(randomClip);
+
+        unitCurrentPoolIndex = (unitCurrentPoolIndex + 1) % poolSize;
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -59,8 +60,14 @@ public class Constructable : MonoBehaviour, IDamageable
         UpdateHealthUI();
     }
 
-    public void ConstructableWasPlaced()
+    public void ConstructableWasPlaced(Vector3 position)
     {
+        buildPosition = position;
+
+        inPreviewMode = false;
+
+        Debug.Log("placed");
+
         // Make healthbar visible
         healthTracker.gameObject.SetActive(true);
 

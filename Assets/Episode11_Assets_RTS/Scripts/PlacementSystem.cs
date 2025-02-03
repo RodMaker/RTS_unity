@@ -74,12 +74,10 @@ public class PlacementSystem : MonoBehaviour
 
     private void PlaceStructure()
     {
-        /*
         if(inputManager.IsPointerOverUI()){
             Debug.Log("Pointer was over UI - Returned");
             return;
         }
-        */
 
         // When we click on a cell, we get the cell
         Vector3 mousePosition = inputManager.GetSelectedMapPosition();

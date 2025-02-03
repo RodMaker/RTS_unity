@@ -14,12 +14,8 @@ public class ObjectPlacer : MonoBehaviour
         GameObject newObject = Instantiate(prefab);
         newObject.transform.position = position;
 
-        newObject.GetComponent<Constructable>().inPreviewMode = false;
-
         // Enable different things for example activate the obstical
-        newObject.GetComponent<Constructable>().ConstructableWasPlaced();
-
-        newObject.GetComponent<Constructable>().buildPosition = position;
+        newObject.GetComponent<Constructable>().ConstructableWasPlaced(position);
 
         // Storing the positions that are now occupied
         placedGameObjects.Add(newObject);
