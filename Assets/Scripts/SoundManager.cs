@@ -97,7 +97,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBuildingSellingSound()
     {
-        if (extraBuildingChannel.isPlaying == false)
+        if (extraBuildingChannel && extraBuildingChannel.isPlaying == false)
         {
             extraBuildingChannel.PlayOneShot(sellingSound);
         }

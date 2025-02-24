@@ -25,6 +25,13 @@ public class BuySlot : MonoBehaviour
         HandleBuildingsChanged();
     }
 
+    private void OnDestroy()
+    {
+        // Unsubscribe
+        ResourceManager.Instance.OnResourceChanged -= HandleResourcesChanged;
+        ResourceManager.Instance.OnBuildingsChanged -= HandleBuildingsChanged;
+    }
+
     public void ClickedOnSlot()
     {
         if (isAvailable)

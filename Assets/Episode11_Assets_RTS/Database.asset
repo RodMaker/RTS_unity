@@ -37,3 +37,15 @@ MonoBehaviour:
       amount: 100
     <buildDependency>k__BackingField: 01000000
     <benefits>k__BackingField: []
+  - <Name>k__BackingField: Supply Center
+    <ID>k__BackingField: 2
+    <thisBuildingType>k__BackingField: 3
+    description: 
+    <Size>k__BackingField: {x: 4, y: 5}
+    <Prefab>k__BackingField: {fileID: 4086652645711553907, guid: 5f64d382d95d0cb47a06929e0b1ac85b,
+      type: 3}
+    <resourceRequirements>k__BackingField:
+    - resource: 0
+      amount: 100
+    <buildDependency>k__BackingField: 01000000
+    <benefits>k__BackingField: []

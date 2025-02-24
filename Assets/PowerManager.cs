@@ -111,6 +111,9 @@ public class PowerManager : MonoBehaviour
 
     public void PlayPowerInsufficientSound()
     {
-        powerAudioSource.PlayOneShot(powerInsufficientClip);
+        if (powerAudioSource && powerInsufficientClip)
+        {
+            powerAudioSource.PlayOneShot(powerInsufficientClip);
+        }
     }
 }
