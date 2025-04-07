@@ -29,7 +29,9 @@ public class ResourceManager : MonoBehaviour
 
     public List<BuildingType> allExistingBuildings;
 
-    public PlacementSystem placementSystem; 
+    public PlacementSystem placementSystem;
+
+    public int creditsPerKiloSpice = 5;
 
     public enum ResourcesType
     {

@@ -14,8 +14,6 @@ public class Constructable : MonoBehaviour, IDamageable
 
     public bool isEnemy = false;
 
-    private NavMeshObstacle obstacle;
-
     public BuildingType buildingType;
 
     public Vector3 buildPosition;
@@ -82,11 +80,29 @@ public class Constructable : MonoBehaviour, IDamageable
         {
             GetComponent<PowerUser>().PowerOn();
         }
+
+        if (buildingType == BuildingType.SupplyCenter)
+        {
+            GameObject prefab = Resources.Load<GameObject>("Harvester");
+            if (prefab != null)
+            {
+                Transform supplyDropTransform = transform.Find("SupplyDrop").transform;
+
+                GameObject instance = Instantiate(prefab, supplyDropTransform.position, Quaternion.identity);
+                instance.transform.SetParent(null);
+
+                Harvester harvester = instance.GetComponent<Harvester>();
+                harvester.supplyCenter = supplyDropTransform;
+            }
+        }
     }
 
     private void ActivateObstacle()
     {
-        obstacle = GetComponentInChildren<NavMeshObstacle>();
-        obstacle.enabled = true;
+        NavMeshObstacle[] obstacles = GetComponentsInChildren<NavMeshObstacle>();
+        foreach (NavMeshObstacle obstacle in obstacles)
+        {
+            obstacle.enabled = true;
+        }
     }
 }
