@@ -25,6 +25,7 @@ public class Harvester : MonoBehaviour
         // Update Animator parameters
         animator.SetBool("hasAssignedNode", assignedNode != null);
         animator.SetBool("isFull", currentCapacity >= maxCapacity);
+        animator.SetBool("isNotEmpty", currentCapacity > 0);
 
         // Check for node depletion
         if (assignedNode != null && assignedNode.GetComponent<ResourceNode>().IsDepleted)
@@ -37,7 +38,18 @@ public class Harvester : MonoBehaviour
     public void MoveTo(Transform target)
     {
         if (target == null) return;
-        agent.SetDestination(target.position);
+        UnitMovement unitMovement = GetComponent<UnitMovement>();
+        if (unitMovement != null)
+        {
+            unitMovement.MoveTo(target.position, false); // Automatic via state machine = false
+        }
+    }
+
+    public void CancelHarvesting()
+    {
+        assignedNode = null;
+        animator.SetBool("hasAssignedNode", false);
+        animator.SetBool("atNode", false);
     }
 
     public void Harvest()

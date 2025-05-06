@@ -19,5 +19,10 @@ public class ResourceNode : MonoBehaviour
                 resources = 0;
             }
         }
+
+        if (IsDepleted)
+        {
+            Destroy(gameObject);
+        }
     }
 }

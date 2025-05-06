@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 5378512128731663116}
   - component: {fileID: 1844997642281869242}
   - component: {fileID: 9181426865892207068}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: SupplyDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

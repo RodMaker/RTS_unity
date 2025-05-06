@@ -117,39 +117,137 @@ public class UnitSelectionManager : MonoBehaviour
             }
         }
 
+        // Hovering and clicking on Resource node while Harvester unit is selected
+
+        if (unitsSelected.Count > 0 && OnlyHarvestersSelected()) // Only if harvesters are selected
+        {
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Collide))
+            {
+                ResourceNode resourceNode = hit.transform.GetComponent<ResourceNode>();
+                if (resourceNode != null)
+                {
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        Transform node = hit.transform;
+
+                        foreach (GameObject unit in unitsSelected)
+                        {
+                            Harvester harvester = unit.GetComponent<Harvester>();
+                            if (harvester != null)
+                            {
+                                harvester.assignedNode = node;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         CursorSelector();
+    }
+
+    private bool OnlyHarvestersSelected()
+    {
+        if (unitsSelected.Count == 0) 
+        {
+            return false;
+        }
+
+        foreach (GameObject unit in unitsSelected)
+        {
+            if (unit == null || unit.GetComponent<Harvester>() == null)
+            {
+                return false; // If a non-harvester unit is selected return false
+            }
+        }
+        return true;
     }
 
     private void CursorSelector()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
+        if (TrySetWalkableCursor()) return;
+        if (TrySetSelectableCursor()) return;
+        if (TrySetAttackableCursor()) return;
+        if (TrySetUnAvailableCursor()) return;
+        if (TrySetSellCursor()) return;
+        if (TrySetGatheringCursor()) return;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, clickable))
+        CursorManager.Instance.SetMarkerType(CursorManager.CursorType.None);
+    }
+
+    private bool RayHits(LayerMask mask, out RaycastHit hit)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        return Physics.Raycast(ray, out hit, Mathf.Infinity, mask);
+    }
+
+    private bool TrySetWalkableCursor()
+    {
+        if (unitsSelected.Count > 0 && RayHits(ground, out _))
+        {
+            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Walkable); 
+            return true;
+        }
+        return false;
+    }
+
+    private bool TrySetSelectableCursor()
+    {
+        if (RayHits(clickable, out _))
         {
             CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Selectable);
+            return true;
         }
-        else if (ResourceManager.Instance.placementSystem.inSellMode)
-        {
-            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.SellCursor);
-        }
-        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, attackable)
-            && unitsSelected.Count > 0 && AtLeastOneOffensiveUnit(unitsSelected))
+        return false;
+    }
+
+    private bool TrySetAttackableCursor()
+    {
+        if (unitsSelected.Count > 0 && AtLeastOneOffensiveUnit(unitsSelected) && RayHits(attackable, out _))
         {
             CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Attackable);
+            return true;
         }
-        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, constructable) && unitsSelected.Count > 0)
+        return false;
+    }
+
+    private bool TrySetUnAvailableCursor()
+    {
+        if (unitsSelected.Count > 0 && RayHits(constructable, out _))
         {
             CursorManager.Instance.SetMarkerType(CursorManager.CursorType.UnAvailable);
+            return true;
         }
-        else if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground) && unitsSelected.Count > 0)
+        return false;
+    }
+
+    private bool TrySetSellCursor()
+    {
+        if (ResourceManager.Instance.placementSystem.inSellMode)
         {
-            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Walkable);
+            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.SellCursor);
+            return true;
         }
-        else
+        return false;
+    }
+
+    private bool TrySetGatheringCursor()
+    {
+        if (unitsSelected.Count > 0 && OnlyHarvestersSelected())
         {
-            CursorManager.Instance.SetMarkerType(CursorManager.CursorType.None);
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Collide))
+            {
+                if (hit.transform.GetComponent<ResourceNode>() != null)
+                {
+                    CursorManager.Instance.SetMarkerType(CursorManager.CursorType.Gathering);
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
     private bool AtLeastOneOffensiveUnit(List<GameObject> unitsSelected)
