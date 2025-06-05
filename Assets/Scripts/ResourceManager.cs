@@ -21,22 +21,19 @@ public class ResourceManager : MonoBehaviour
     }
 
     public int credits = 300;
+    public int oil = 0;
 
     public event Action OnResourceChanged;
     public event Action OnBuildingsChanged;
 
     public TextMeshProUGUI creditsUI;
+    public TextMeshProUGUI oilAmountUI;
 
     public List<BuildingType> allExistingBuildings;
 
     public PlacementSystem placementSystem;
 
-    public int creditsPerKiloSpice = 5;
-
-    public enum ResourcesType
-    {
-        Credits
-    }
+    internal const int CREDITS_PER_KILO_GOLD = 5;
 
     private void Start()
     {
@@ -62,12 +59,15 @@ public class ResourceManager : MonoBehaviour
         OnBuildingsChanged?.Invoke();
     }
 
-    public void IncreaseResource(ResourcesType resource, int amountToIncrease)
+    public void IncreaseResource(ResourceType resource, int amountToIncrease)
     {
         switch (resource)
         {
-            case ResourcesType.Credits:
+            case ResourceType.Credits:
                 credits += amountToIncrease;
+                break;
+            case ResourceType.Oil:
+                oil += amountToIncrease; 
                 break;
             default: 
                 break;
@@ -76,12 +76,15 @@ public class ResourceManager : MonoBehaviour
         OnResourceChanged?.Invoke();
     }
 
-    public void DecreaseResource(ResourcesType resource, int amountToDecrease)
+    public void DecreaseResource(ResourceType resource, int amountToDecrease)
     {
         switch (resource)
         {
-            case ResourcesType.Credits:
+            case ResourceType.Credits:
                 credits -= amountToDecrease;
+                break;
+            case ResourceType.Oil:
+                oil -= amountToDecrease;
                 break;
             default:
                 break;
@@ -104,7 +107,7 @@ public class ResourceManager : MonoBehaviour
             {
                 foreach (BuildRequirement req in obj.resourceRequirements)
                 {
-                    if (req.resource == ResourcesType.Credits)
+                    if (req.resource == ResourceType.Credits)
                     {
                         sellingPrice = req.amount;
                     }
@@ -114,12 +117,13 @@ public class ResourceManager : MonoBehaviour
 
         int amountToReturn = (int)(sellingPrice * 0.5f); // 50% of the cost
 
-        IncreaseResource(ResourcesType.Credits, amountToReturn);
+        IncreaseResource(ResourceType.Credits, amountToReturn);
     }
 
     private void UpdateUI()
     {
         creditsUI.text = $"{credits}";
+        oilAmountUI.text = $"{oil}";
     }
 
     public int GetCredits()
@@ -127,12 +131,14 @@ public class ResourceManager : MonoBehaviour
         return credits;
     }
 
-    internal int GetResourceAmount(ResourcesType resource)
+    internal int GetResourceAmount(ResourceType resource)
     {
         switch (resource)
         {
-            case ResourcesType.Credits:
+            case ResourceType.Credits:
                 return credits;
+            case ResourceType.Oil:
+                return oil;
             default:
                 break;
         }
@@ -157,4 +163,12 @@ public class ResourceManager : MonoBehaviour
     {
         OnResourceChanged -= UpdateUI;
     }
+}
+
+public enum ResourceType
+{
+    Credits,
+    Oil,
+    Gold,
+    None
 }

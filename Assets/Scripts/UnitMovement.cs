@@ -14,6 +14,8 @@ public class UnitMovement : MonoBehaviour
 
     DirectionIndicator directionIndicator;
 
+    public bool allowManualInput = true;
+
     private void Start()
     {
         cam = Camera.main;
@@ -24,6 +26,8 @@ public class UnitMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!allowManualInput) return;
+
         if (Input.GetMouseButtonDown(1) && IsMovingPossible())
         {
             RaycastHit hit;
