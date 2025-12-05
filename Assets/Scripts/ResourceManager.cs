@@ -22,12 +22,14 @@ public class ResourceManager : MonoBehaviour
 
     public int credits = 300;
     public int oil = 0;
+    public int gold = 0;
 
     public event Action OnResourceChanged;
     public event Action OnBuildingsChanged;
 
     public TextMeshProUGUI creditsUI;
     public TextMeshProUGUI oilAmountUI;
+    public TextMeshProUGUI goldAmountUI;
 
     public List<BuildingType> allExistingBuildings;
 
@@ -69,6 +71,9 @@ public class ResourceManager : MonoBehaviour
             case ResourceType.Oil:
                 oil += amountToIncrease; 
                 break;
+            case ResourceType.Gold:
+                gold += amountToIncrease;
+                break;
             default: 
                 break;
         }
@@ -85,6 +90,9 @@ public class ResourceManager : MonoBehaviour
                 break;
             case ResourceType.Oil:
                 oil -= amountToDecrease;
+                break;
+            case ResourceType.Gold:
+                gold -= amountToDecrease;
                 break;
             default:
                 break;
@@ -124,6 +132,7 @@ public class ResourceManager : MonoBehaviour
     {
         creditsUI.text = $"{credits}";
         oilAmountUI.text = $"{oil}";
+        goldAmountUI.text = $"{gold}";
     }
 
     public int GetCredits()
@@ -139,6 +148,8 @@ public class ResourceManager : MonoBehaviour
                 return credits;
             case ResourceType.Oil:
                 return oil;
+            case ResourceType.Gold:
+                return gold;
             default:
                 break;
         }

@@ -54,13 +54,16 @@ public class Unit : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
+        if (GetComponent<Harvester>() == false) // Ignore this code for the harvester
         {
-            animator.SetBool("isMoving", true);
-        }
-        else
-        {
-            animator.SetBool("isMoving", false);
+            if (navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
+            {
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
         }
     }
 }

@@ -152,8 +152,13 @@ public class Harvester : MonoBehaviour
                 ResourceManager.Instance.IncreaseResource(ResourceType.Oil, (int)tempCapacity);
                 return;
             case ResourceType.Gold:
+                ResourceManager.Instance.IncreaseResource(ResourceType.Gold, (int)tempCapacity);
+                return;
+            /*
+            case ResourceType.Gold:
                 ResourceManager.Instance.IncreaseResource(ResourceType.Credits, ((int)tempCapacity * ResourceManager.CREDITS_PER_KILO_GOLD));
                 return;
+            */
         }
     }
 

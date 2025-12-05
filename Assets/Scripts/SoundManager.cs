@@ -27,6 +27,13 @@ public class SoundManager : MonoBehaviour
     public AudioClip buildingDestructionSound;
     public AudioClip sellingSound;
 
+    [Header("Commander")]
+    private AudioSource commanderChannel;
+    public AudioClip unitReadyClip;
+    public AudioClip constructionCompletedClip;
+    public AudioClip trainingClip;
+    public AudioClip buildingClip;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -70,6 +77,27 @@ public class SoundManager : MonoBehaviour
         extraBuildingChannel = gameObject.AddComponent<AudioSource>();
         //extraBuildingChannel.volume = 1f;
         //extraBuildingChannel.playOnAwake = false;
+
+        commanderChannel = gameObject.AddComponent<AudioSource>();
+    }
+
+    public void PlayUnitReadySound()
+    {
+        commanderChannel.PlayOneShot(unitReadyClip);
+    }
+
+    public void ConstructionCompleteSound()
+    {
+        commanderChannel.PlayOneShot(constructionCompletedClip);
+    }
+
+    public void TrainingSound()
+    {
+        commanderChannel.PlayOneShot(trainingClip);
+    }
+    public void BuildingSound()
+    {
+        commanderChannel.PlayOneShot(buildingClip);
     }
 
     public void PlayInfantryAttackSound()

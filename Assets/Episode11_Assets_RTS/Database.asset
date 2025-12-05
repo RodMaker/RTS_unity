@@ -16,6 +16,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Command Center
     <ID>k__BackingField: 0
     <thisBuildingType>k__BackingField: 1
+    <thisUnitType>k__BackingField: 0
     description: 
     <Size>k__BackingField: {x: 3, y: 3}
     <Prefab>k__BackingField: {fileID: 1986312044789550465, guid: 3639450100901a3468eefbea3e25c01e,
@@ -28,6 +29,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Power Plant
     <ID>k__BackingField: 1
     <thisBuildingType>k__BackingField: 2
+    <thisUnitType>k__BackingField: 0
     description: 
     <Size>k__BackingField: {x: 3, y: 3}
     <Prefab>k__BackingField: {fileID: 8850964909181546825, guid: 94fe805e12be13c48afb48e22e1bf05d,
@@ -40,6 +42,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Supply Center
     <ID>k__BackingField: 2
     <thisBuildingType>k__BackingField: 3
+    <thisUnitType>k__BackingField: 0
     description: 
     <Size>k__BackingField: {x: 4, y: 5}
     <Prefab>k__BackingField: {fileID: 4086652645711553907, guid: 5f64d382d95d0cb47a06929e0b1ac85b,
@@ -47,5 +50,17 @@ MonoBehaviour:
     <resourceRequirements>k__BackingField:
     - resource: 0
       amount: 100
+    <buildDependency>k__BackingField: 01000000
+    <benefits>k__BackingField: []
+  - <Name>k__BackingField: Infantry Unit
+    <ID>k__BackingField: 3
+    <thisBuildingType>k__BackingField: 0
+    <thisUnitType>k__BackingField: 1
+    description: 
+    <Size>k__BackingField: {x: 0, y: 0}
+    <Prefab>k__BackingField: {fileID: 0}
+    <resourceRequirements>k__BackingField:
+    - resource: 2
+      amount: 25
     <buildDependency>k__BackingField: 01000000
     <benefits>k__BackingField: []

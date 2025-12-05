@@ -58,8 +58,28 @@ public class Constructable : MonoBehaviour, IDamageable
         UpdateHealthUI();
     }
 
+    void SetLayerRecursively(GameObject obj, int newLayer)
+    {
+        if (obj == null)
+        {
+            return;
+        }
+
+        obj.layer = newLayer; // Set child layer back to "Constructable"
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, newLayer);
+        }
+    }
+
     public void ConstructableWasPlaced(Vector3 position)
     {
+        int cursorPriorityLayer = LayerMask.NameToLayer("Constructable");
+        SetLayerRecursively(gameObject, cursorPriorityLayer);
+
+        GetComponent<FogRevealer>().enabled = true;
+
         buildPosition = position;
 
         inPreviewMode = false;

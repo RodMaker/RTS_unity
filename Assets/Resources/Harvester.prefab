@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2330173188801677293}
   - component: {fileID: 61285097958805299}
   - component: {fileID: 6816454820562459418}
+  - component: {fileID: 7975068649840537202}
   m_Layer: 7
   m_Name: Harvester
   m_TagString: Unit
@@ -201,6 +202,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isCommandedToMove: 0
+  allowManualInput: 1
 --- !u!114 &2835931344620309121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +220,7 @@ MonoBehaviour:
   harvestAmountPerSecond: 1
   maxCapacity: 10
   capacitySlider: {fileID: 1815844885697122052}
+  currentResourceType: 0
 --- !u!195 &1475871179929411584
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -430,6 +433,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7975068649840537202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434479927863142092}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0f8e39dd9b1eb4c8866c153e0260da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personalRevealArea: 1
 --- !u!1 &617236280266073864
 GameObject:
   m_ObjectHideFlags: 0

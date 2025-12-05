@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3828865517833984424}
   - component: {fileID: 4997740786593574862}
   - component: {fileID: 829229439260568265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AlphaDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2414937045200208609}
   - component: {fileID: 4382025268700313978}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HealthBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 7531270930834828031}
   - component: {fileID: 3062875260200510209}
   - component: {fileID: 595060171646542519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ES_SupplyCenter_FactionStructure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 2264206784130670420}
   - component: {fileID: 2588194182757793895}
   - component: {fileID: 446287171785634236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ES_SupplyCenter_AlphMesh_FactionStructure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 4257501818947436762}
   - component: {fileID: 8113299045449415578}
   - component: {fileID: 9150794088912330344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FactionStructure_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 6177155525709862524}
   - component: {fileID: 1529242658747435956}
   - component: {fileID: 1365523827429163131}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 7874767799932983213}
   - component: {fileID: 9153370017643050820}
   - component: {fileID: 7272268083075397509}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 2328814463615193307}
   - component: {fileID: 1142508067135314409}
   - component: {fileID: 720632687954280335}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: ConstructableUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5545145731310312519}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4067890492053609337}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 5378512128731663116}
   - component: {fileID: 1844997642281869242}
   - component: {fileID: 9181426865892207068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SupplyDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 7614912693909566838}
   - component: {fileID: 9140663094962824732}
   - component: {fileID: 6320000088748885277}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1050,7 +1050,8 @@ GameObject:
   - component: {fileID: 1976787345932581949}
   - component: {fileID: 5608814369529960458}
   - component: {fileID: 2800753874679299005}
-  m_Layer: 10
+  - component: {fileID: 6291539403008945490}
+  m_Layer: 9
   m_Name: SupplyCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1129,6 +1130,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.52, y: 1.37, z: 3.47}
   m_Center: {x: 1.26, y: 0.6, z: 0.4}
+--- !u!114 &6291539403008945490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086652645711553907}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0f8e39dd9b1eb4c8866c153e0260da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personalRevealArea: 4
 --- !u!1 &4938266980329023438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1156,7 @@ GameObject:
   - component: {fileID: 6458212590626839275}
   - component: {fileID: 6858507771390497883}
   - component: {fileID: 3635924530701410687}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HealthTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1250,7 +1264,7 @@ GameObject:
   - component: {fileID: 4272000809970700517}
   - component: {fileID: 4366440863577308523}
   - component: {fileID: 5507147374556912395}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1370,7 +1384,7 @@ GameObject:
   - component: {fileID: 7128923502249183833}
   - component: {fileID: 1604592077038623504}
   - component: {fileID: 256696521948141514}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1445,7 +1459,7 @@ GameObject:
   - component: {fileID: 8528608067984356673}
   - component: {fileID: 2477237496962325784}
   - component: {fileID: 5609584545479843179}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1520,7 +1534,7 @@ GameObject:
   - component: {fileID: 8654481098039148305}
   - component: {fileID: 6060633522615696574}
   - component: {fileID: 3045919767638014346}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: TeamName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1652,7 +1666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2408717217974901071}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

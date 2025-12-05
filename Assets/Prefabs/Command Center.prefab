@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7665805863494654173}
   - component: {fileID: 3924153612705357349}
   - component: {fileID: 615758665794686594}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1876568190190552314}
   - component: {fileID: 2861809847971142716}
   - component: {fileID: 3215634896425448128}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: AlphaDetail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 5575275144281719691}
   - component: {fileID: 1720607005207876858}
   - component: {fileID: 5208314955670094339}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: ConstructableUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,8 @@ GameObject:
   - component: {fileID: 97519957427883661}
   - component: {fileID: 8895820886709588369}
   - component: {fileID: -8007173866818848608}
-  m_Layer: 10
+  - component: {fileID: 8654392117922959660}
+  m_Layer: 9
   m_Name: Command Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,6 +351,19 @@ MonoBehaviour:
   producingPower: 0
   consumingPower: 50
   isProducer: 0
+--- !u!114 &8654392117922959660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986312044789550465}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0f8e39dd9b1eb4c8866c153e0260da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personalRevealArea: 4
 --- !u!1 &2618242692986044634
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +375,7 @@ GameObject:
   - component: {fileID: 7407514275627084848}
   - component: {fileID: 2401130547020916642}
   - component: {fileID: 4791445348143731963}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: TeamName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4667929228574018856}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +545,7 @@ GameObject:
   - component: {fileID: 132423972929524729}
   - component: {fileID: 6215138506803089662}
   - component: {fileID: 6740387420800549110}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1953643880242289302}
   - component: {fileID: 8148498628507898562}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HealthBarSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +711,7 @@ GameObject:
   - component: {fileID: 7260624139631745134}
   - component: {fileID: 2095118818353769299}
   - component: {fileID: 3812498216066487858}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: ES_CommandCenter_FactionStructure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +811,7 @@ GameObject:
   - component: {fileID: 1576427520886582555}
   - component: {fileID: 8467311021718654638}
   - component: {fileID: 2699946552798290516}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772373755995871846}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7140737621473576306}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +973,7 @@ GameObject:
   - component: {fileID: 2483686927938554382}
   - component: {fileID: 2319130257346263394}
   - component: {fileID: 1454727980273503377}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HealthTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1079,7 @@ GameObject:
   - component: {fileID: 5714324548641888717}
   - component: {fileID: 4718326399402378162}
   - component: {fileID: 4409251682146998217}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: ES_CommandCenter_FactionStructure_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

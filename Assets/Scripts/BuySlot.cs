@@ -15,6 +15,14 @@ public class BuySlot : MonoBehaviour
 
     public int databaseItemID;
 
+    public float trainingTime = 5;
+
+    public BuildSlotProgress buildSlotProgress;
+
+    public bool isBuildingOrTraining = false;
+    public bool isReadyToPlace = false;
+    public GameObject readyBG;
+
     private void Start()
     {
         // Subscribe to event / listen to event
@@ -36,7 +44,37 @@ public class BuySlot : MonoBehaviour
     {
         if (isAvailable)
         {
-            buySystem.placementSystem.StartPlacement(databaseItemID);
+            // If we clicked on a building
+            if (buySystem.IsDatabaseItemABuilding(databaseItemID))
+            {
+                if (!isBuildingOrTraining && !isReadyToPlace)
+                {
+                    // First click: Start training
+                    SoundManager.Instance.BuildingSound();
+                    buildSlotProgress.StartBuilding(trainingTime);
+                    buySystem.StartBuildingOrTraining(this, trainingTime);
+                }
+                else if (isReadyToPlace)
+                {
+                    // Second click: Place building
+                    buySystem.placementSystem.StartPlacement(databaseItemID);
+
+                    isReadyToPlace = false;
+                    isBuildingOrTraining = false;
+                    readyBG.SetActive(false);
+                }
+            }
+            else
+            {
+                ResourceManager.Instance.DecreaseResourcesBasedOnRequirement(buySystem.database.objectsData[databaseItemID]);
+
+                SoundManager.Instance.TrainingSound();
+
+                // Progress UI Animation
+                buildSlotProgress.StartBuilding(trainingTime);
+                // Training Delay
+                buySystem.StartUnitTraining(databaseItemID, trainingTime);
+            }
         }
     }
 

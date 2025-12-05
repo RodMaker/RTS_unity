@@ -31,6 +31,13 @@ public enum BuildingType
     SupplyCenter
 }
 
+public enum UnitType
+{
+    None,
+    InfantryUnit,
+    Harvester
+}
+
 [System.Serializable]
 public class ObjectData
 {
@@ -42,6 +49,9 @@ public class ObjectData
 
     [field: SerializeField]
     public BuildingType thisBuildingType { get; private set; }
+
+    [field: SerializeField]
+    public UnitType thisUnitType { get; private set; }
 
     [field: SerializeField]
     [TextArea(3, 10)]
